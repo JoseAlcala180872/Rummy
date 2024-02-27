@@ -4,13 +4,16 @@
 
 package com.itson.rummy;
 
+import GUI.frmTablero;
+
 /**
  *
- * @author Yeisi
+ * @author José Alcalá 180872
  */
 public class Rummy {
 
     public static void main(String[] args) {
-        System.out.println("Ke ondas!");
+        frmTablero tablero=new frmTablero();
+        tablero.setVisible(true);
     }
 }
