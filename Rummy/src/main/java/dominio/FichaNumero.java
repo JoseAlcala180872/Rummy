@@ -19,4 +19,9 @@ public class FichaNumero extends Ficha {
         // Implementación de ejemplo
         return this.numero;
     }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
 }

@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import dominio.FichaNumero;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
@@ -16,6 +17,7 @@ public class frmTablero extends javax.swing.JFrame {
     private List<JButton> botones;
     private int indice;
     public int maximoFichas;
+    public List<JButton> fichas;
 
     
     public int getMaximoFichas() {
@@ -113,26 +115,43 @@ public class frmTablero extends javax.swing.JFrame {
 
     private void btnPozoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPozoActionPerformed
         System.out.println("El maximo de fichas son: "+maximoFichas);
-        for (int i = 0; i < maximoFichas; i++) {
-            //dibujar fichas de todos los colores
-            
+        fichas = new ArrayList<>();
+        ArrayList<FichaNumero> ficha=new ArrayList<>();
+        
+            for (int i = 0; i < 2; i++) {
             //rojas
-            for (int j = 0; j < maximoFichas; j++) {
-                System.out.println("Ficha roja");
+            for (int j = 1; j < maximoFichas+1; j++) {
+                System.out.println("Ficha amarillas: "+j);
+                JButton boton = new JButton("amarillo " + j);
+                panel.add(boton);
+                fichas.add(boton);                
+                panel.updateUI();
             }
             //amarillas
-            for (int k = 0; k < maximoFichas; k++) {
-                System.out.println("Ficha amarillas");
+            for (int k = 1; k < maximoFichas+1; k++) {
+                System.out.println("Ficha amarillas: "+k);
+                JButton boton = new JButton("amarillo " + k);
+                panel.add(boton);
+                fichas.add(boton);                
+                panel.updateUI();
             }
             //verdes
-            for (int l = 0; l < maximoFichas; l++) {
-                System.out.println("Ficha verdes");
+            for (int l = 1; l < maximoFichas+1; l++) {
+                System.out.println("Ficha verdes: "+l);
+                JButton boton = new JButton("verde " + l);
+                panel.add(boton);
+                fichas.add(boton);                
+                panel.updateUI();
             }
             //negras
-            for (int m = 0; m < maximoFichas; m++) {
-                System.out.println("Ficha negras");
+            for (int m = 1; m < maximoFichas+1; m++) {
+                System.out.println("Ficha negras: "+m);
+                JButton boton = new JButton("negro " + m);
+                panel.add(boton);
+                fichas.add(boton);                
+                panel.updateUI();
             }
-        }
+        }               
     }//GEN-LAST:event_btnPozoActionPerformed
 
     /**
