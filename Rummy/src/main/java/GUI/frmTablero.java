@@ -15,15 +15,29 @@ import javax.swing.JButton;
 public class frmTablero extends javax.swing.JFrame {
     private List<JButton> botones;
     private int indice;
+    public int maximoFichas;
+
     
+    public int getMaximoFichas() {
+        return maximoFichas;
+    }
 
     /**
      * Creates new form frmTablero
      */
+    public void setMaximoFichas(int maximoFichas) {    
+        this.maximoFichas = maximoFichas;
+    }
+
+  
+
     public frmTablero() {
         initComponents();
         botones = new ArrayList<>();
         indice = 0;
+        ArrayList<Integer> pozo=new ArrayList<>();
+        
+        
     }
 
     /**
@@ -38,6 +52,7 @@ public class frmTablero extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         panel = new javax.swing.JPanel();
+        btnPozo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,8 +63,14 @@ public class frmTablero extends javax.swing.JFrame {
             }
         });
 
-        panel.setLayout(new java.awt.GridLayout(0, 3));
         jScrollPane2.setViewportView(panel);
+
+        btnPozo.setText("pozo(+)");
+        btnPozo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPozoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,16 +82,20 @@ public class frmTablero extends javax.swing.JFrame {
                     .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAgregar)
-                        .addGap(0, 316, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPozo)
+                        .addGap(0, 333, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(btnAgregar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregar)
+                    .addComponent(btnPozo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -85,6 +110,30 @@ public class frmTablero extends javax.swing.JFrame {
         indice++;
         panel.updateUI();
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnPozoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPozoActionPerformed
+        System.out.println("El maximo de fichas son: "+maximoFichas);
+        for (int i = 0; i < maximoFichas; i++) {
+            //dibujar fichas de todos los colores
+            
+            //rojas
+            for (int j = 0; j < maximoFichas; j++) {
+                System.out.println("Ficha roja");
+            }
+            //amarillas
+            for (int k = 0; k < maximoFichas; k++) {
+                System.out.println("Ficha amarillas");
+            }
+            //verdes
+            for (int l = 0; l < maximoFichas; l++) {
+                System.out.println("Ficha verdes");
+            }
+            //negras
+            for (int m = 0; m < maximoFichas; m++) {
+                System.out.println("Ficha negras");
+            }
+        }
+    }//GEN-LAST:event_btnPozoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +172,7 @@ public class frmTablero extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnPozo;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
