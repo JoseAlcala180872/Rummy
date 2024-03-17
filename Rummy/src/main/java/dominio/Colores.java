@@ -8,6 +8,6 @@ package dominio;
  *
  * @author yalam
  */
-public enum Color {
-    ROJO, VERDE, AZUL, AMARILLO, MORADO, BLANCO, CAFE, NARANJA
+public enum Colores {
+    ROJO, VERDE, AZUL, AMARILLO
 }

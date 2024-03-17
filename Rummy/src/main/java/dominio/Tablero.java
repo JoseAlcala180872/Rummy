@@ -4,6 +4,8 @@
  */
 package dominio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yalam
@@ -11,9 +13,9 @@ package dominio;
 public class Tablero {
     public FichasEnJuego fichasEnJuego;
     public Tablero tableroSingle;
-    public Ficha pozo;
+    public ArrayList<Fichas> pozo;
     
-    public boolean getFicha() {
+    public boolean isPrimero() {
         // Implementación pendiente
         return false;
     }

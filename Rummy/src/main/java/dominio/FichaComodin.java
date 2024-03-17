@@ -8,7 +8,7 @@ package dominio;
  *
  * @author yalam
  */
-public class FichaComodin extends Ficha {
+public class FichaComodin extends Fichas {
     // No se especifican atributos adicionales para FichaComodin en el diagrama
 
     @Override

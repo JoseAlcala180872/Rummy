@@ -4,10 +4,12 @@
  */
 package dominio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yalam
  */
 public class FichasEnJuego {
-    public Conjunto[] conjuntos;
+    public ArrayList<Conjunto> conjuntos;
 }

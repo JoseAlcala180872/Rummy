@@ -4,10 +4,12 @@
  */
 package dominio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yalam
  */
 public class ConjuntoEscaleras extends Conjunto {
-    public Ficha[] fichas;
+    public ArrayList<Fichas> fichas;
 }

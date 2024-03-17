@@ -9,12 +9,12 @@ package dominio;
  * @author yalam
  */
 public class ColorJugador {
-
+    //Atributos
     public Jugador jugador;
-    public Grupo grupo;
-    public Color color;
-
-    public void setColor(Grupo grupo, Color color) {
+    public Grupos grupo;
+    public Colores color;
+    //Metodos
+    public void setColor(Grupos grupo, Colores color) {
         // Implementación pendiente
     }
 }

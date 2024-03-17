@@ -15,7 +15,7 @@ public class Conjunto {
         // Implementación pendiente
     }
 
-    public void añadirConjunto() {
+    public void añadirAConjunto() {
         // Implementación pendiente
     }
 

@@ -8,6 +8,6 @@ package dominio;
  *
  * @author yalam
  */
-public abstract class Ficha {
-    public abstract int obtenerValor();
+public enum Grupos {
+    VERDE, AMARILLO, AZUL, ROJO
 }

@@ -10,7 +10,7 @@ import java.awt.Color;
  *
  * @author yalam
  */
-public class FichaNumero extends Ficha {
+public class FichaNumero extends Fichas {
     public int numero;
     public Color colorFicha;
 

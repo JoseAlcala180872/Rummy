@@ -12,7 +12,9 @@ import java.util.List;
  * @author yalam
  */
 public class Mano {
-
-   
-
+    ArrayList<Fichas> fichasJugador=new ArrayList<>();
+    
+    public void agregarFichas(){
+        //implementacion pendiente
+    }
 }

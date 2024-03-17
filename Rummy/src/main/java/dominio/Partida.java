@@ -4,14 +4,28 @@
  */
 package dominio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yalam
  */
 public class Partida {
-    public int marcadorFichas;
+    
+    public int maximoFichas;
     public Tablero tableroSingle;
-    public Jugador[] jugadores;
+    Partida partidaSingle;
+    public ArrayList<Jugador> jugadores;
+
+    public Partida() {
+    }
+    
+    public Partida(int maximoFichas, Tablero tableroSingle, Partida partidaSingle, ArrayList<Jugador> jugadores) {
+        this.maximoFichas = maximoFichas;
+        this.tableroSingle = tableroSingle;
+        this.partidaSingle = partidaSingle;
+        this.jugadores = jugadores;
+    }
     
     public Partida getPartida() {
         // Implementación pendiente
