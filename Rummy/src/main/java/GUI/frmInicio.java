@@ -5,20 +5,28 @@
 package GUI;
 
 import dominio.Jugador;
+import javax.swing.ImageIcon;
 import modelo.ModeloInicio;
 import util.IObserver;
 
 /**
  *
- * @author el_fr
+ * @author 
  */
 public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloInicio>{
 
     /**
      * Creates new form frmInicio
      */
+    private ModeloInicio inicio;
     public frmInicio() {
         initComponents();
+    }
+    public frmInicio(ModeloInicio inicio) {
+        initComponents();
+        this.inicio=inicio;
+        this.inicio.suscribir(this);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -30,33 +38,15 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlLogo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         btnIniciarPartida = new javax.swing.JButton();
         btnConfigurarPartida = new javax.swing.JButton();
+        lblAvatar = new javax.swing.JLabel();
+        lblNombreUsuario = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("<Poner logo>");
-
-        javax.swing.GroupLayout pnlLogoLayout = new javax.swing.GroupLayout(pnlLogo);
-        pnlLogo.setLayout(pnlLogoLayout);
-        pnlLogoLayout.setHorizontalGroup(
-            pnlLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlLogoLayout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(jLabel1)
-                .addContainerGap(149, Short.MAX_VALUE))
-        );
-        pnlLogoLayout.setVerticalGroup(
-            pnlLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlLogoLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel1)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-
-        btnIniciarPartida.setText("Iniciar Partida");
+        btnIniciarPartida.setText("Crear Partida");
         btnIniciarPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarPartidaActionPerformed(evt);
@@ -70,43 +60,63 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
             }
         });
 
+        lblAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatars/avatar_blank.png"))); // NOI18N
+        lblAvatar.setText("<avatar>");
+
+        lblNombreUsuario.setText("Nombre de Usuario");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnConfigurarPartida)
-                            .addComponent(pnlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(96, 150, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(201, 201, 201)
+                                .addComponent(btnConfigurarPartida))
+                            .addComponent(btnIniciarPartida)
+                            .addComponent(lblNombreUsuario)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(btnIniciarPartida)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71))
+                            .addComponent(jLabel1))))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(pnlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(29, 29, 29)
+                .addComponent(lblAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(lblNombreUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(btnIniciarPartida)
-                .addGap(9, 9, 9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnConfigurarPartida)
-                .addGap(23, 23, 23))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarPartidaActionPerformed
-    }//GEN-LAST:event_btnIniciarPartidaActionPerformed
-
     private void btnConfigurarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigurarPartidaActionPerformed
-        new FrmConfigurarPartida().setVisible(true);
+        new FrmConfigurarJugador(inicio).setVisible(true);
     }//GEN-LAST:event_btnConfigurarPartidaActionPerformed
+
+    private void btnIniciarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarPartidaActionPerformed
+        new frmPartida().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnIniciarPartidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,7 +148,7 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmInicio().setVisible(true);
+                new frmInicio(new ModeloInicio(new Jugador())).setVisible(true);
             }
         });
     }
@@ -147,11 +157,15 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
     private javax.swing.JButton btnConfigurarPartida;
     private javax.swing.JButton btnIniciarPartida;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel pnlLogo;
+    private javax.swing.JLabel lblAvatar;
+    private javax.swing.JLabel lblNombreUsuario;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void actualizar(ModeloInicio contexto) {
+        System.out.println(contexto.getJugador().avatar);
+        this.lblAvatar.setIcon(new ImageIcon(getClass().getResource(contexto.getJugador().avatar)));
+        this.lblNombreUsuario.setText(contexto.getJugador().nombre);
         // TODO: Implementar cambios que seran visibles en la vista
     }
 }
