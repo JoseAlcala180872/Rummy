@@ -4,12 +4,14 @@
  */
 package dominio;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yalam
  */
 public class Conjunto {
-    public Conjunto[] conjuntos;
+    public ArrayList<Conjunto> conjuntos;
 
     public void crearConjunto() {
         // Implementación pendiente

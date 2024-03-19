@@ -15,16 +15,20 @@ public class Jugador {
     public String nombre;
     public Color colorJugador;
     public String avatar;
+    public Mano mano;
     //Metodos
     
     public Jugador() {
     }
-    
-    public Jugador(String nombre, Color colorJugador, String avatar) {
+
+    public Jugador(String nombre, Color colorJugador, String avatar, Mano mano) {
         this.nombre = nombre;
         this.colorJugador = colorJugador;
         this.avatar = avatar;
+        this.mano = mano;
     }
+    
+   
     
     public String getNombre() {
         return nombre;

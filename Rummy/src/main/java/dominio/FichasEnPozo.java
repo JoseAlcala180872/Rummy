@@ -5,6 +5,7 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -52,6 +53,24 @@ public class FichasEnPozo {
                 ficha.add(fichaNumero);
                 pozo.add(fichaNumero);
             }
-        }            
+        }  
+            Collections.shuffle(pozo);
+    }
+    public void repartirFichas(int numeroJugadores){
+        Mano mano=new Mano();
+        mano.setFichasJugador(pozo);
+        // Crear una lista de listas para representar las fichas de cada jugador
+        ArrayList<ArrayList<Fichas>> jugadores = new ArrayList<>();
+        for (int i = 0; i < numeroJugadores; i++) {
+            jugadores.add(new ArrayList<>());
+        }
+        // Repartir las fichas
+        for (int i = 0; i < pozo.size(); i++) {
+            jugadores.get(i % numeroJugadores).add(pozo.get(i));
+        }
+        // Imprimir las fichas de cada jugador para verificar
+        for (int i = 0; i < jugadores.size(); i++) {
+            System.out.println("Jugador " + (i + 1) + ": " + jugadores.get(i).toString());
+        }
     }
 }

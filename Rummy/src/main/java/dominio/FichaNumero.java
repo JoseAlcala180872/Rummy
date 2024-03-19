@@ -23,5 +23,11 @@ public class FichaNumero extends Fichas {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    @Override
+    public String toString() {
+        return "FichaNumero{" + "numero=" + numero + ", colorFicha=" + colorFicha + '}';
+    }
+    
     
 }

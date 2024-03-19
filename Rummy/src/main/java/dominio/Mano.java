@@ -12,9 +12,24 @@ import java.util.List;
  * @author yalam
  */
 public class Mano {
-    ArrayList<Fichas> fichasJugador=new ArrayList<>();
+    ArrayList<Fichas> fichasJugador;
+
+    public Mano() {
+    }
+
+    public Mano(ArrayList<Fichas> fichasJugador) {
+        this.fichasJugador = fichasJugador;
+    }
     
     public void agregarFichas(){
         //implementacion pendiente
+    }
+
+    public ArrayList<Fichas> getFichasJugador() {
+        return fichasJugador;
+    }
+
+    public void setFichasJugador(ArrayList<Fichas> fichasJugador) {
+        this.fichasJugador = fichasJugador;
     }
 }
