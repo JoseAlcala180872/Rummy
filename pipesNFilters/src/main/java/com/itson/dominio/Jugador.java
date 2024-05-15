@@ -5,13 +5,16 @@
 package com.itson.dominio;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 /**
  *
  * @author yalam
  */
-public class Jugador {
+public class Jugador implements Serializable{
+    private static final long serialVersionUID=1L;
     //Atributos
+    public String id;
     public String nombre;
     public Color colorJugador;
     public String avatar;
@@ -53,5 +56,11 @@ public class Jugador {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "id=" + id + ", nombre=" + nombre + ", colorJugador=" + colorJugador + ", avatar=" + avatar +  '}';
+    }
+    
     
 }

@@ -38,4 +38,8 @@ public class Partida implements Serializable{
         // Implementación pendiente
         return 0;
     }
+     @Override
+    public String toString() {
+        return "Partida{" + "maximoFichas=" + maximoFichas + ", jugadores=" + jugadores + '}';
+    }
 }

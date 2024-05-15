@@ -4,10 +4,13 @@
  */
 package com.itson.dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author yalam
  */
-public abstract class Fichas {
+public abstract class Fichas implements Serializable{
+    private static final long serialVersionUID=1L;
     public abstract int obtenerValor();
 }

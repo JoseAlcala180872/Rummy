@@ -4,7 +4,7 @@
  */
 package modelo;
 
-import dominio.Jugador;
+import com.itson.dominio.Jugador;
 import javax.swing.JFrame;
 import util.IObservable;
 import util.IObserver;
@@ -21,7 +21,7 @@ public class ModeloInicio implements IObservable<ModeloInicio>{
     
     public ModeloInicio(Jugador jugador){
         this.jugador=jugador;
-    }
+        }
     
     
     @Override

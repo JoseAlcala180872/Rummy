@@ -4,6 +4,12 @@
  */
 package GUI;
 
+import com.itson.cliente.Cliente;
+import com.itson.dominio.Jugador;
+import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.ModeloInicio;
 import util.AvatarManager;
@@ -189,10 +195,37 @@ public class FrmConfigurarJugador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        this.dispose();
-        this.inicio.getJugador().nombre=this.txtNombreUsuario.getText();
-        this.inicio.getJugador().avatar=this.avatars.getActualUri();
-        this.inicio.notificar(inicio);
+        try {
+            this.dispose();
+            this.inicio.getJugador().nombre=this.txtNombreUsuario.getText();
+            this.inicio.getJugador().avatar=this.avatars.getActualUri();
+            this.inicio.notificar(inicio);
+            Color color= new Color(0);
+            if(rbtnColor1.isSelected()){
+                color=Color.RED;
+            }
+            if(rbtnColor2.isSelected()){
+                color=Color.BLUE;
+            }
+            if(rbtnColor3.isSelected()){
+                color=Color.GREEN;
+            }
+            if(rbtnColor4.isSelected()){
+                color=Color.YELLOW;
+            }
+            if(rbtnColor5.isSelected()){
+                color=Color.MAGENTA;
+            }
+            if(rbtnColor6.isSelected()){
+                color=Color.cyan;
+            }
+            Cliente.getInstance().getOu().writeUTF("CONFIGURARJUGADOR");
+            Cliente.getInstance().getOu().flush();
+            Cliente.getInstance().getOu().writeObject(new Jugador(this.inicio.getJugador().nombre,color,this.inicio.getJugador().avatar,null));
+            Cliente.getInstance().getOu().flush();
+        } catch (IOException ex) {
+            Logger.getLogger(FrmConfigurarJugador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void btnConfirmarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarNombreActionPerformed

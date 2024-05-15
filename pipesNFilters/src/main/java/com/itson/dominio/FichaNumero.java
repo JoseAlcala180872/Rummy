@@ -5,12 +5,14 @@
 package com.itson.dominio;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 /**
  *
  * @author yalam
  */
-public class FichaNumero extends Fichas {
+public class FichaNumero extends Fichas implements Serializable{
+    private static final long serialVersionUID=1L;
     public int numero;
     public Color colorFicha;
     public FichaNumero(){

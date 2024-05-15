@@ -5,12 +5,14 @@
 package dominio;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 /**
  *
  * @author yalam
  */
-public class Jugador {
+public class Jugador implements Serializable{
+    private static final long serialVersionUID=1L;
     //Atributos
     public String nombre;
     public Color colorJugador;

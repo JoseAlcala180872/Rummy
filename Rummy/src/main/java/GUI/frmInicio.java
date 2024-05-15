@@ -4,7 +4,11 @@
  */
 package GUI;
 
-import dominio.Jugador;
+import com.itson.cliente.Cliente;
+import com.itson.dominio.Jugador;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import modelo.ModeloInicio;
 import util.IObserver;
@@ -19,14 +23,20 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
      * Creates new form frmInicio
      */
     private ModeloInicio inicio;
-    public frmInicio() {
+    public frmInicio() throws IOException {
         initComponents();
+        new Thread(Cliente.getInstance()).start();
     }
     public frmInicio(ModeloInicio inicio) {
-        initComponents();
-        this.inicio=inicio;
-        this.inicio.suscribir(this);
-        setLocationRelativeTo(null);
+        try {
+            initComponents();
+            this.inicio=inicio;
+            this.inicio.suscribir(this);
+            setLocationRelativeTo(null);
+            new Thread(Cliente.getInstance()).start();
+        } catch (IOException ex) {
+            Logger.getLogger(frmInicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -60,8 +70,12 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
             }
         });
 
-        lblAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatars/avatar_blank.png"))); // NOI18N
+        lblAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/avatars/avatar01.png"))); // NOI18N
         lblAvatar.setText("<avatar>");
+        lblAvatar.setMaximumSize(new java.awt.Dimension(200, 200));
+        lblAvatar.setMinimumSize(new java.awt.Dimension(200, 200));
+        lblAvatar.setName(""); // NOI18N
+        lblAvatar.setPreferredSize(new java.awt.Dimension(200, 200));
 
         lblNombreUsuario.setText("Nombre de Usuario");
 
@@ -85,7 +99,7 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(71, 71, 71))
                             .addComponent(jLabel1))))
                 .addGap(24, 24, 24))
@@ -96,7 +110,7 @@ public class frmInicio extends javax.swing.JFrame implements IObserver<ModeloIni
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addGap(29, 29, 29)
-                .addComponent(lblAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAvatar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(lblNombreUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)

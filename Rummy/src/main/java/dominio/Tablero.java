@@ -4,13 +4,15 @@
  */
 package dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author yalam
  */
-public class Tablero {
+public class Tablero implements Serializable{
+    private static final long serialVersionUID=1L;
     public FichasEnJuego fichasEnJuego;
     public Tablero tableroSingle;
     public ArrayList<Fichas> pozo;
